@@ -2,12 +2,10 @@ import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 import {Product, ProductVariant} from 'mockApi/products';
 
 type CartState = {
-  items: {
-    [product: Product['productId']]: ProductVariant['variantId'][];
-  };
+  items: CartItem[];
 };
 
-const initialState: CartState = {items: {}};
+const initialState: CartState = {items: []};
 
 type CartItem = {
   productId: Product['productId'];
@@ -19,21 +17,14 @@ export const cartSlice = createSlice({
   initialState: initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
-      const {productId, variantId} = action.payload;
-      if (state.items[productId]) {
-        state.items[productId].push(variantId);
-      } else {
-        state.items[productId] = [variantId];
-      }
+      state.items.push(action.payload);
     },
     removeFromCart: (state, action: PayloadAction<CartItem>) => {
       const {productId, variantId} = action.payload;
 
-      if (state.items[productId]) {
-        state.items[productId] = state.items[productId].filter(
-          variant => variant !== variantId,
-        );
-      }
+      state.items = state.items.filter(
+        item => item.productId !== productId || item.variantId !== variantId,
+      );
     },
   },
 });

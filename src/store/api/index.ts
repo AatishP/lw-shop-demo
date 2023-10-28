@@ -2,6 +2,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import {
   Product,
   ProductDetail,
+  getMockProductDetailsByIds,
   getProductDetails,
   getProducts,
 } from 'mockApi/products';
@@ -36,8 +37,21 @@ export const simpleShopApi = createApi({
         }
       },
     }),
+    // This is used to "select" the details for already-fetched products.
+    // Realistically the values this would fetch would already be cached if we were using a real API, but since
+    // it's all mocked out, this convenience query is here to pretend it's working that way
+    getProductDetailsByIds: builder.query<ProductDetail[] | null, string[]>({
+      queryFn: arg => {
+        return {
+          data: getMockProductDetailsByIds(arg),
+        };
+      },
+    }),
   }),
 });
 
-export const {useGetProductsQuery, useGetProductDetailsByIdQuery} =
-  simpleShopApi;
+export const {
+  useGetProductsQuery,
+  useGetProductDetailsByIdQuery,
+  useGetProductDetailsByIdsQuery,
+} = simpleShopApi;

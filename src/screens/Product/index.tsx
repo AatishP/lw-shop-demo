@@ -12,7 +12,7 @@ import {ActivityIndicator} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {useGetProductDetailsByIdQuery} from 'store/api';
 import {addToCart} from 'store/cart';
-import {selectCartItems} from 'store/cart/selectors';
+import {selectCartItemsByProductId} from 'store/cart/selectors';
 import {getCurrencyString} from 'utils/number';
 
 type ProductRouteProp = RouteProp<RootNavigatorParams, Routes.Product>;
@@ -22,10 +22,11 @@ export const Product = () => {
   const {goBack} = useNavigation();
   const [selectedVariantId, setSelectedVariantId] = useState<string>();
   const dispatch = useDispatch();
-  const cart = useSelector(selectCartItems);
 
   const {id: productId, name: productName} = params;
-  const cartItemsForProduct = cart[productId];
+
+  const cartItemsByProductId = useSelector(selectCartItemsByProductId);
+  const cartItemsForProduct = cartItemsByProductId[productId];
 
   const {
     data: productDetails,

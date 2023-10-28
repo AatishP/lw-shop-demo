@@ -3,6 +3,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {TabNavigator} from 'navigators/TabNavigator';
 import {Product} from 'screens/Product';
+import {CheckoutNavigator} from 'navigators/CheckoutNavigator';
 
 const Stack = createStackNavigator<RootNavigatorParams>();
 
@@ -11,7 +12,6 @@ export const RootNavigator = () => {
     <Stack.Navigator
       screenOptions={{headerShown: false, presentation: 'modal'}}>
       <Stack.Screen name={Routes.TabNavigator} component={TabNavigator} />
-      {/* <Stack.Screen name={Routes.CheckoutNavigator} /> */}
       <Stack.Screen
         name={Routes.Product}
         component={Product}
@@ -21,6 +21,10 @@ export const RootNavigator = () => {
           title: '',
           headerTransparent: true,
         }}
+      />
+      <Stack.Screen
+        name={Routes.CheckoutNavigator}
+        component={CheckoutNavigator}
       />
     </Stack.Navigator>
   );

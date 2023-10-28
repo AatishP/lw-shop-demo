@@ -189,3 +189,18 @@ export const getProductDetails = async (productId: string) => {
 
   return selectedProduct ?? null;
 };
+
+export const getMockProductDetailsByIds = (productIds: string[]) => {
+  const detailsToReturn: ProductDetail[] = [];
+
+  productIds.forEach(id => {
+    const productDetails = MOCK_PRODUCT_DETAILS.find(
+      product => product.productId === id,
+    );
+    if (productDetails) {
+      detailsToReturn.push(productDetails);
+    }
+  });
+
+  return detailsToReturn;
+};

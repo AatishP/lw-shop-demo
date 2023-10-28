@@ -8,3 +8,6 @@ https://www.bicycling.com/bikes-gear/a26066137/best-race-bikes/
 https://www.colombos.net.au/store/Coca-Cola-Can-p186465082
 https://www.istockphoto.com/photos/soda-bottle-on-white
 https://fjallraven.com.au/products/f-ovik-knit-sweater-m?variant=40782106984644
+
+### Icon Credits:
+https://uxwing.com/shopping-cart-icon/

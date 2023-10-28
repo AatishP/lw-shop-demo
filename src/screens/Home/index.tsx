@@ -14,8 +14,9 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {useGetProductsQuery} from 'store/api';
 import {ActivityIndicator} from 'react-native';
-import {selectCartItems} from 'store/cart/selectors';
+import {selectNumberOfItemsInCart} from 'store/cart/selectors';
 import {useSelector} from 'react-redux';
+import {FloatingButton} from 'components/FloatingButton';
 
 type HomeNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabNavigatorParams, Routes.Home>,
@@ -26,9 +27,8 @@ export const Home = () => {
   const {navigate} = useNavigation<HomeNavigationProp>();
 
   const {data: products, isLoading} = useGetProductsQuery();
-  const cart = useSelector(selectCartItems);
 
-  console.log('Cart', cart);
+  const itemsInCart = useSelector(selectNumberOfItemsInCart);
 
   const handleProductPress = (id: string) => {
     const selectedProduct = products?.find(product => product.productId === id);
@@ -38,27 +38,45 @@ export const Home = () => {
     }
   };
 
+  const handleCartPress = () => {
+    navigate(Routes.CheckoutNavigator, {
+      screen: Routes.Cart,
+    });
+  };
+
   return (
-    <AppScreen>
-      <AppText type="title" weight="bold">
-        Start shopping, simply.
-      </AppText>
-      <Space size={32} />
-      {isLoading ? (
-        <ActivityIndicator size="large" />
-      ) : (
-        <Grid>
-          {products?.map(product => (
-            <ProductCard
-              key={product.productId}
-              name={product.productName}
-              id={product.productId}
-              thumbnail={product.thumbnail}
-              onPress={handleProductPress}
-            />
-          ))}
-        </Grid>
+    <>
+      <AppScreen>
+        <AppText type="title" weight="bold">
+          Start shopping, simply.
+        </AppText>
+        <Space size={32} />
+        {isLoading ? (
+          <ActivityIndicator size="large" />
+        ) : (
+          <>
+            <Grid>
+              {products?.map(product => (
+                <ProductCard
+                  key={product.productId}
+                  name={product.productName}
+                  id={product.productId}
+                  thumbnail={product.thumbnail}
+                  onPress={handleProductPress}
+                />
+              ))}
+            </Grid>
+          </>
+        )}
+      </AppScreen>
+      {itemsInCart > 0 && (
+        <FloatingButton
+          label={`Cart: ${itemsInCart}`}
+          horizontalPosition="right"
+          verticalPosition="bottom"
+          onPress={handleCartPress}
+        />
       )}
-    </AppScreen>
+    </>
   );
 };

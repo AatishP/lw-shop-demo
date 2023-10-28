@@ -17,8 +17,7 @@ export enum Routes {
 
 export type RootNavigatorParams = {
   [Routes.TabNavigator]: NavigatorScreenParams<TabNavigatorParams>;
-  [Routes.CheckoutNavigator]: undefined; // TODO: Update
-  [Routes.Cart]: undefined; // TODO: Update?
+  [Routes.CheckoutNavigator]: NavigatorScreenParams<CheckoutNavigatorParams>;
   [Routes.Product]: {
     id: string;
     name: string;
@@ -35,6 +34,7 @@ export type BaseRouteParams = {
 };
 
 export type CheckoutNavigatorParams = {
+  [Routes.Cart]: undefined; // TODO: Update?
   [Routes.PaymentDetails]: undefined;
   [Routes.Confirmation]: undefined;
 };
