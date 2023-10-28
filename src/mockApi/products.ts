@@ -128,7 +128,7 @@ const MOCK_PRODUCT_DETAILS: ProductDetail[] = [
         variantName: '375mL',
         price: 1.5,
         variantDescription:
-          'Have it on the couch or on the go. The perfect size for the perfect day.',
+          "Have it on the couch or on the go - it's the perfect size for the perfect day. Any resemblance to existing soft drink brands is purely coincidental.",
         images: [FullImageName.SoftDrinkA1, FullImageName.SoftDrinkA2],
       },
       {
@@ -136,11 +136,12 @@ const MOCK_PRODUCT_DETAILS: ProductDetail[] = [
         variantName: '1.25L',
         price: 4,
         variantDescription:
-          "Guaranteed to make you the life of the party. Contains one weeks' worth of your recommended sugar intake, so share it with some mates.",
+          "Guaranteed to make you the life of the party. Our new 'Flavour+' recipe contains over two weeks' worth of your recommended sugar intake, so share it with some mates.",
         images: [FullImageName.SoftDrinkB1, FullImageName.SoftDrinkB2],
       },
     ],
-    description: 'Quench your thirst with a delicious Soft Drink.',
+    description:
+      'Quench your thirst with a delicious (and generic) Soft Drink.',
   },
   {
     productId: '00000003',
