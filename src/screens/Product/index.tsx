@@ -97,6 +97,7 @@ export const Product = () => {
             onPress={handleAddToCardPress}
             disabled={isSelectedVariantInCart}
           />
+          <Space size={8} />
         </>
       )}
     </AppScreen>

@@ -4,7 +4,17 @@ export const getCurrencyString = (amount?: number) => {
     return '';
   }
 
-  return `$${amount.toFixed(hasDecimalPlaces(amount) ? 2 : 0)}`;
+  // Show no decimal places if it's a whole number, otherwise force 2
+  const decimalPlacesToShow = hasDecimalPlaces(amount) ? 2 : 0;
+
+  const localisedAmount = amount.toLocaleString(undefined, {
+    minimumFractionDigits: decimalPlacesToShow,
+    maximumFractionDigits: decimalPlacesToShow,
+  });
+
+  const amountString = `$${localisedAmount}`;
+
+  return amountString;
 };
 
 const hasDecimalPlaces = (number: number) => {
