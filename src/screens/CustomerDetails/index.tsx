@@ -38,7 +38,7 @@ export const CustomerDetails = () => {
   const dispatch = useDispatch();
 
   const onOrderPlaced = (data: DetailsForm) => {
-    console.log(data);
+    console.log(data); // TODO: Send order to 'API'
     navigate(Routes.OrderConfirmation);
     dispatch(clearCart());
   };
