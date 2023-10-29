@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "LWShopDemo.app"
-               BlueprintName = "LWShopDemo"
-               ReferencedContainer = "container:LWShopDemo.xcodeproj">
+               BuildableName = "SimpleShop.app"
+               BlueprintName = "SimpleShop"
+               ReferencedContainer = "container:SimpleShop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "LWShopDemoTests.xctest"
-               BlueprintName = "LWShopDemoTests"
-               ReferencedContainer = "container:LWShopDemo.xcodeproj">
+               BuildableName = "SimpleShopTests.xctest"
+               BlueprintName = "SimpleShopTests"
+               ReferencedContainer = "container:SimpleShop.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "LWShopDemo.app"
-            BlueprintName = "LWShopDemo"
-            ReferencedContainer = "container:LWShopDemo.xcodeproj">
+            BuildableName = "SimpleShop.app"
+            BlueprintName = "SimpleShop"
+            ReferencedContainer = "container:SimpleShop.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "LWShopDemo.app"
-            BlueprintName = "LWShopDemo"
-            ReferencedContainer = "container:LWShopDemo.xcodeproj">
+            BuildableName = "SimpleShop.app"
+            BlueprintName = "SimpleShop"
+            ReferencedContainer = "container:SimpleShop.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
