@@ -2,6 +2,8 @@ import {CheckoutNavigatorParams, Routes} from 'navigators/Routes';
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Cart} from 'screens/Cart';
+import {CustomerDetails} from 'screens/CustomerDetails';
+import {OrderConfirmation} from 'screens/OrderConfirmation';
 
 const Stack = createStackNavigator<CheckoutNavigatorParams>();
 
@@ -16,16 +18,12 @@ export const CheckoutNavigator = () => {
         title: '',
       }}>
       <Stack.Screen name={Routes.Cart} component={Cart} />
-      {/* <Stack.Screen
-        name={Routes.Product}
-        component={Product}
-        options={{
-          headerShown: true,
-          headerBackTitle: 'Back',
-          title: '',
-          headerTransparent: true,
-        }}
-      /> */}
+      <Stack.Screen name={Routes.CustomerDetails} component={CustomerDetails} />
+      <Stack.Screen
+        name={Routes.OrderConfirmation}
+        component={OrderConfirmation}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

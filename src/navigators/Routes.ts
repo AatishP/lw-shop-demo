@@ -11,8 +11,8 @@ export enum Routes {
   // Checkout flow
   Cart = 'Cart',
   CheckoutNavigator = 'CheckoutNavigator',
-  PaymentDetails = 'PaymentDetails',
-  Confirmation = 'Confirmation',
+  CustomerDetails = 'CustomerDetails',
+  OrderConfirmation = 'OrderConfirmation',
 }
 
 export type RootNavigatorParams = {
@@ -35,8 +35,8 @@ export type BaseRouteParams = {
 
 export type CheckoutNavigatorParams = {
   [Routes.Cart]: undefined; // TODO: Update?
-  [Routes.PaymentDetails]: undefined;
-  [Routes.Confirmation]: undefined;
+  [Routes.CustomerDetails]: undefined;
+  [Routes.OrderConfirmation]: undefined;
 };
 
 export type RouteParams = {

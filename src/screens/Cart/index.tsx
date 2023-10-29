@@ -1,9 +1,18 @@
+import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {AppScreen} from 'components/AppScreen';
 import {AppText} from 'components/AppText';
 import {Button} from 'components/Button';
 import {ProductRow} from 'components/ProductRow';
 import {Space} from 'components/Space';
 import {PRODUCT_IMAGES} from 'mockApi/products';
+import {
+  TabNavigatorParams,
+  Routes,
+  RootNavigatorParams,
+  CheckoutNavigatorParams,
+} from 'navigators/Routes';
 import React from 'react';
 import {ImageSourcePropType, StyleSheet, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
@@ -24,8 +33,14 @@ type MappedCartItem = {
   image?: ImageSourcePropType;
 };
 
+type CartNavigationProp = CompositeNavigationProp<
+  StackNavigationProp<CheckoutNavigatorParams, Routes.Cart>,
+  StackNavigationProp<RootNavigatorParams>
+>;
+
 export const Cart = () => {
   const dispatch = useDispatch();
+  const {navigate} = useNavigation<CartNavigationProp>();
   const cart = useSelector(selectCartItems);
   const productIdsInCart = useSelector(selectUniqueProductIdsInCart);
 
@@ -87,6 +102,10 @@ export const Cart = () => {
     }, 0);
   };
 
+  const handleContinuePress = () => {
+    navigate(Routes.CustomerDetails);
+  };
+
   const cartItems = getMappedCartInfo();
   const productRows = getProductRows(cartItems);
 
@@ -107,7 +126,11 @@ export const Cart = () => {
         <AppText>Your cart is empty</AppText>
       )}
       <Space expandToFill={true} />
-      <Button title="Continue to checkout" disabled={productRows.length <= 0} />
+      <Button
+        title="Continue to checkout"
+        disabled={productRows.length <= 0}
+        onPress={handleContinuePress}
+      />
       <Space size={8} />
     </AppScreen>
   );

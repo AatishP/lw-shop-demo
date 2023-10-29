@@ -26,7 +26,8 @@ export const cartSlice = createSlice({
         item => item.productId !== productId || item.variantId !== variantId,
       );
     },
+    clearCart: () => initialState,
   },
 });
 
-export const {addToCart, removeFromCart} = cartSlice.actions;
+export const {addToCart, removeFromCart, clearCart} = cartSlice.actions;
