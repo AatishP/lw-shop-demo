@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {TabNavigator} from 'navigators/TabNavigator';
 import {Product} from 'screens/Product';
 import {CheckoutNavigator} from 'navigators/CheckoutNavigator';
+import {Platform} from 'react-native';
 
 const Stack = createStackNavigator<RootNavigatorParams>();
 
@@ -19,7 +20,7 @@ export const RootNavigator = () => {
           headerShown: true,
           headerBackTitle: 'Back',
           title: '',
-          headerTransparent: true,
+          headerTransparent: Platform.OS === 'ios',
         }}
       />
       <Stack.Screen

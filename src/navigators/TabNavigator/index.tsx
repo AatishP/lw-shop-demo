@@ -3,8 +3,21 @@ import {RouteParams, Routes, TabNavigatorParams} from 'navigators/Routes';
 import {Home} from 'screens/Home';
 import {OrderHistory} from 'screens/OrderHistory';
 import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Tab = createBottomTabNavigator<TabNavigatorParams>();
+
+const getTabIconForRoute = (route: Routes) => {
+  console.log('getting...');
+  switch (route) {
+    case Routes.Home:
+      return <Icon name="home" size={24} color="blue" />;
+    case Routes.OrderHistory:
+      return <Icon name="shopping-bag" size={24} color="blue" />;
+    default:
+      return <></>;
+  }
+};
 
 export const TabNavigator = () => {
   return (
@@ -14,8 +27,7 @@ export const TabNavigator = () => {
         component={Home}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: () => undefined,
-          tabBarLabelStyle: {fontSize: 14},
+          tabBarIcon: () => getTabIconForRoute(Routes.Home),
         }}
       />
       <Tab.Screen
@@ -23,8 +35,7 @@ export const TabNavigator = () => {
         component={OrderHistory}
         options={{
           tabBarLabel: 'Order History',
-          tabBarIcon: () => undefined,
-          tabBarLabelStyle: {fontSize: 14},
+          tabBarIcon: () => getTabIconForRoute(Routes.OrderHistory),
         }}
       />
     </Tab.Navigator>

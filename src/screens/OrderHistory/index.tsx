@@ -23,6 +23,7 @@ export const OrderHistory = () => {
           }`;
           return (
             <OrderHistoryRow
+              key={orderHistoryItem.orderId}
               title={`#${orderHistoryItem.orderId}`}
               subtitle={itemNumberString}
             />

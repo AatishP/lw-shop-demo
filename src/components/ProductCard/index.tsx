@@ -34,7 +34,6 @@ export const ProductCard = ({
       <View style={styles.textContainer}>
         <AppText>{name}</AppText>
       </View>
-      {/* <Space /> */}
     </Pressable>
   );
 };
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'gray',
     height: 160,
-    width: '45%', // TODO: Size these properly
+    width: '45%',
     margin: 8,
     overflow: 'hidden',
   },
