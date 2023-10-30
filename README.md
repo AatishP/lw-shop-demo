@@ -31,7 +31,7 @@ _You may note the addition of the 'Order History' tab - this wasn't strictly req
 
 ## Getting started
 
-Note that this project was created on a device with a Apple Silicon, running macOS 14.0, Node 18.12.1, Xcode 15.0 and Android Studio 2022.3.1. It's been tested on a simulated iOS device running iOS 17.0, an emulated Android device running Android 13.0, and a real iPhone 15 Pro Max running iOS 17.0.3. It'll probably work with different configurations, but no guarantees!
+Note that this project was created on a device with an Apple Silicon processor, running macOS 14.0, Node 18.12.1, Xcode 15.0 and Android Studio 2022.3.1. It's been tested on a simulated iOS device running iOS 17.0, an emulated Android device running Android 13.0, and a real iPhone 15 Pro Max running iOS 17.0.3. It'll probably work with different configurations, but no guarantees!
 
 **All of the instructions below assume you're running the above configuration.**
 
