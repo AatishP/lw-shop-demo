@@ -1,4 +1,4 @@
-import {AppText} from 'components/AppText';
+import {AppText} from 'components/atoms/AppText';
 import React, {ComponentProps} from 'react';
 import {StyleSheet, TextInput} from 'react-native';
 

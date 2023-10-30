@@ -1,20 +1,18 @@
-import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppScreen} from 'components/AppScreen';
-import {AppText} from 'components/AppText';
-import {Button} from 'components/Button';
-import {ProductRow} from 'components/ProductRow';
-import {Space} from 'components/Space';
+import {AppScreen} from 'components/layouts/AppScreen';
+import {AppText} from 'components/atoms/AppText';
+import {Button} from 'components/atoms/Button';
+import {ProductRow} from 'components/molecules/ProductRow';
+import {Space} from 'components/atoms/Space';
 import {PRODUCT_IMAGES} from 'mockApi/products';
 import {
-  TabNavigatorParams,
   Routes,
   RootNavigatorParams,
   CheckoutNavigatorParams,
 } from 'navigators/Routes';
 import React from 'react';
-import {ImageSourcePropType, StyleSheet, View} from 'react-native';
+import {ImageSourcePropType, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {useGetProductDetailsByIdsQuery} from 'store/api';
 import {removeFromCart} from 'store/cart';

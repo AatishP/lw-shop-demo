@@ -1,9 +1,9 @@
-import {AppScreen} from 'components/AppScreen';
+import {AppScreen} from 'components/layouts/AppScreen';
 import React from 'react';
-import {ProductCard} from 'components/ProductCard';
-import {Grid} from 'components/Grid';
-import {AppText} from 'components/AppText';
-import {Space} from 'components/Space';
+import {ProductCard} from 'components/molecules/ProductCard';
+import {Grid} from 'components/layouts/Grid';
+import {AppText} from 'components/atoms/AppText';
+import {Space} from 'components/atoms/Space';
 import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
 import {
   RootNavigatorParams,
@@ -16,7 +16,7 @@ import {useGetProductsQuery} from 'store/api';
 import {ActivityIndicator} from 'react-native';
 import {selectNumberOfItemsInCart} from 'store/cart/selectors';
 import {useSelector} from 'react-redux';
-import {FloatingButton} from 'components/FloatingButton';
+import {FloatingButton} from 'components/atoms/FloatingButton';
 
 type HomeNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabNavigatorParams, Routes.Home>,

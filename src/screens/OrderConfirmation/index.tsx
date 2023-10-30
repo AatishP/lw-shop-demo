@@ -5,10 +5,10 @@ import {
   useRoute,
 } from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppScreen} from 'components/AppScreen';
-import {AppText} from 'components/AppText';
-import {Button} from 'components/Button';
-import {Space} from 'components/Space';
+import {AppScreen} from 'components/layouts/AppScreen';
+import {AppText} from 'components/atoms/AppText';
+import {Button} from 'components/atoms/Button';
+import {Space} from 'components/atoms/Space';
 import {
   CheckoutNavigatorParams,
   Routes,

@@ -1,4 +1,4 @@
-import {AppText} from 'components/AppText';
+import {AppText} from 'components/atoms/AppText';
 import {Image, Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {PRODUCT_IMAGES, ThumbnailName} from 'mockApi/products';

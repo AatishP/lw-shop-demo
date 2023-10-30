@@ -1,13 +1,6 @@
-import {AppText} from 'components/AppText';
+import {AppText} from 'components/atoms/AppText';
 import React from 'react';
-import {
-  Image,
-  ImageSourcePropType,
-  Pressable,
-  StyleSheet,
-  View,
-} from 'react-native';
-import {getCurrencyString} from 'utils/number';
+import {StyleSheet, View} from 'react-native';
 
 type OrderHistoryRowProps = {
   title: string;

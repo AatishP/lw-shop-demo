@@ -1,10 +1,10 @@
 import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {AppScreen} from 'components/AppScreen';
-import {AppText} from 'components/AppText';
-import {Button} from 'components/Button';
-import {Space} from 'components/Space';
-import {TextField} from 'components/TextField';
+import {AppScreen} from 'components/layouts/AppScreen';
+import {AppText} from 'components/atoms/AppText';
+import {Button} from 'components/atoms/Button';
+import {Space} from 'components/atoms/Space';
+import {TextField} from 'components/molecules/TextField';
 import {
   CheckoutNavigatorParams,
   Routes,
@@ -64,8 +64,8 @@ export const CustomerDetails = () => {
     },
   });
 
-  const onOrderPlaced = (data: DetailsForm) => {
-    postOrder({items: cart, customerInfo: data});
+  const onOrderPlaced = (formData: DetailsForm) => {
+    postOrder({items: cart, customerInfo: formData});
   };
 
   return (

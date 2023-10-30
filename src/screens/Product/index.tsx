@@ -1,10 +1,10 @@
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
-import {AppScreen} from 'components/AppScreen';
-import {AppText} from 'components/AppText';
-import {Button} from 'components/Button';
-import {ImageCarousel} from 'components/ImageCarousel';
-import {ProductVariantCarousel} from 'components/ProductVariantCarousel';
-import {Space} from 'components/Space';
+import {AppScreen} from 'components/layouts/AppScreen';
+import {AppText} from 'components/atoms/AppText';
+import {Button} from 'components/atoms/Button';
+import {ImageCarousel} from 'components/molecules/ImageCarousel';
+import {ProductVariantCarousel} from 'components/molecules/ProductVariantCarousel';
+import {Space} from 'components/atoms/Space';
 import {PRODUCT_IMAGES} from 'mockApi/products';
 import {RootNavigatorParams, Routes} from 'navigators/Routes';
 import React, {useEffect, useState} from 'react';

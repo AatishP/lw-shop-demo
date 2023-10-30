@@ -34,7 +34,7 @@ export type BaseRouteParams = {
 };
 
 export type CheckoutNavigatorParams = {
-  [Routes.Cart]: undefined; // TODO: Update?
+  [Routes.Cart]: undefined;
   [Routes.CustomerDetails]: undefined;
   [Routes.OrderConfirmation]: {orderId?: string};
 };

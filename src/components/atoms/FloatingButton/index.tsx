@@ -1,4 +1,4 @@
-import {AppText} from 'components/AppText';
+import {AppText} from 'components/atoms/AppText';
 import React, {useRef} from 'react';
 import {
   Animated,

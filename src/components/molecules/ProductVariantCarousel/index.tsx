@@ -1,4 +1,4 @@
-import {AppText} from 'components/AppText';
+import {AppText} from 'components/atoms/AppText';
 import {ProductVariant} from 'mockApi/products';
 import React from 'react';
 import {Pressable, ScrollView, StyleSheet} from 'react-native';

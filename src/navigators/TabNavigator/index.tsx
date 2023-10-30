@@ -1,5 +1,5 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {RouteParams, Routes, TabNavigatorParams} from 'navigators/Routes';
+import {Routes, TabNavigatorParams} from 'navigators/Routes';
 import {Home} from 'screens/Home';
 import {OrderHistory} from 'screens/OrderHistory';
 import React from 'react';
@@ -8,7 +8,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Tab = createBottomTabNavigator<TabNavigatorParams>();
 
 const getTabIconForRoute = (route: Routes) => {
-  console.log('getting...');
   switch (route) {
     case Routes.Home:
       return <Icon name="home" size={24} color="blue" />;
