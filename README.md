@@ -2,6 +2,8 @@
 
 This App was created using React Native to fulfil the following brief for a basic shopping App:
 
+--
+
 Screens:
 
 - Splash screen
@@ -22,6 +24,10 @@ Extra notes:
 
 - It is allowed to have one product only as long as there are variations following the instructions above.
 - Don’t expect a fully fleshed UI/UX, happy to have grey scale UI and things to simplify the work, at least make sure that the user journey flows
+
+--
+
+_You may note the addition of the 'Order History' tab - this wasn't strictly required in the brief, but I figured it made the Home screen look a bit less lonely_
 
 ## Getting started
 
@@ -57,7 +63,7 @@ You can also run the project directly from Xcode or Android Studio if you wish.
 
 ## Next steps
 
-With the limited scope of this project, and time constraints to create it, there are a few things I would do next if I had more time or if this was turning into a real project.
+With the limited scope of this project, and time constraints to create it, there are a few things I would do next if I had more time or if this was turning into a real project:
 
 - Create a proper API. Obviously all of the API interactions are mocked out in this example, and as a result some of the state management is less than ideal to support that. If a real API were available, I would probably update the product/cart state to use some kind of normalised entity model to avoid refetching product details everywhere, and to avoid all the mapping gymnastics around the cart.
 - More responsive design. A lot of design elements are using percentage based widths, which work fine in the short term but don't adapt well to differing screen/font sizes. I'd like to create some more foundational layout components to make the UI more adaptable. The customer details form in particular looks quite awful.
