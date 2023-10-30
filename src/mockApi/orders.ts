@@ -24,17 +24,20 @@ export type Order = {
 };
 
 export type OrderConfirmation = {
+  order: Order;
   orderId: string;
 };
 
 // Responds with a randomly generated order ID to simulate a successful order
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// It also returns the order information in lieu of a proper order history API, in order
+// to simulate the order history functioanlity
 export const postOrder = async (order: Order): Promise<OrderConfirmation> => {
   await fakeDelay();
 
   const randomNumber = Math.random() * 100000;
 
   return {
+    order: order,
     orderId: Math.round(randomNumber).toString(10),
   };
 };

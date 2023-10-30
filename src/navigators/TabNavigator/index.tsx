@@ -9,8 +9,24 @@ const Tab = createBottomTabNavigator<TabNavigatorParams>();
 export const TabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name={Routes.Home} component={Home} />
-      <Tab.Screen name={Routes.OrderHistory} component={OrderHistory} />
+      <Tab.Screen
+        name={Routes.Home}
+        component={Home}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: () => undefined,
+          tabBarLabelStyle: {fontSize: 14},
+        }}
+      />
+      <Tab.Screen
+        name={Routes.OrderHistory}
+        component={OrderHistory}
+        options={{
+          tabBarLabel: 'Order History',
+          tabBarIcon: () => undefined,
+          tabBarLabelStyle: {fontSize: 14},
+        }}
+      />
     </Tab.Navigator>
   );
 };
