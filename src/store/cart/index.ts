@@ -1,16 +1,11 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {Product, ProductVariant} from 'mockApi/products';
+import {CartItem} from 'mockApi/orders';
 
 type CartState = {
   items: CartItem[];
 };
 
 const initialState: CartState = {items: []};
-
-type CartItem = {
-  productId: Product['productId'];
-  variantId: ProductVariant['variantId'];
-};
 
 export const cartSlice = createSlice({
   name: 'cart',

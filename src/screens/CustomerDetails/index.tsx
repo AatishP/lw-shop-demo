@@ -10,11 +10,13 @@ import {
   Routes,
   RootNavigatorParams,
 } from 'navigators/Routes';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Controller, useForm} from 'react-hook-form';
-import {View} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {ActivityIndicator, View} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {usePostOrderMutation} from 'store/api';
 import {clearCart} from 'store/cart';
+import {selectCartItems} from 'store/cart/selectors';
 
 type DetailsForm = {
   firstName: string;
@@ -36,12 +38,17 @@ type CustomerDetailsNavigationProp = CompositeNavigationProp<
 export const CustomerDetails = () => {
   const {navigate} = useNavigation<CustomerDetailsNavigationProp>();
   const dispatch = useDispatch();
+  const cart = useSelector(selectCartItems);
+  const [postOrder, {isSuccess, isLoading, data}] = usePostOrderMutation();
 
-  const onOrderPlaced = (data: DetailsForm) => {
-    console.log(data); // TODO: Send order to 'API'
-    navigate(Routes.OrderConfirmation);
-    dispatch(clearCart());
-  };
+  useEffect(() => {
+    if (isSuccess) {
+      navigate(Routes.OrderConfirmation, {
+        orderId: data?.orderId,
+      });
+      dispatch(clearCart());
+    }
+  });
 
   const {control, handleSubmit} = useForm<DetailsForm>({
     defaultValues: {
@@ -56,6 +63,10 @@ export const CustomerDetails = () => {
       country: '',
     },
   });
+
+  const onOrderPlaced = (data: DetailsForm) => {
+    postOrder({items: cart, customerInfo: data});
+  };
 
   return (
     <AppScreen>
@@ -195,6 +206,7 @@ export const CustomerDetails = () => {
         />
       </View>
       <Space size={32} />
+      {isLoading && <ActivityIndicator size="large" />}
       <Button title="Place order" onPress={handleSubmit(onOrderPlaced)} />
     </AppScreen>
   );

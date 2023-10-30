@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import {CartItem, Order, OrderConfirmation, postOrder} from 'mockApi/orders';
 import {
   Product,
   ProductDetail,
@@ -6,6 +7,7 @@ import {
   getProductDetails,
   getProducts,
 } from 'mockApi/products';
+import {RootState} from 'store/store';
 
 export const simpleShopApi = createApi({
   reducerPath: 'simpleShopApi',
@@ -47,6 +49,13 @@ export const simpleShopApi = createApi({
         };
       },
     }),
+    postOrder: builder.mutation<OrderConfirmation, Order>({
+      queryFn: async arg => {
+        return {
+          data: await postOrder(arg),
+        };
+      },
+    }),
   }),
 });
 
@@ -54,4 +63,5 @@ export const {
   useGetProductsQuery,
   useGetProductDetailsByIdQuery,
   useGetProductDetailsByIdsQuery,
+  usePostOrderMutation,
 } = simpleShopApi;

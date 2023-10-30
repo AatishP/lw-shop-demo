@@ -1,3 +1,5 @@
+import {fakeDelay} from 'utils/miscHelpers';
+
 // Mocked responses and data types from a Products API
 export type Product = {
   productId: string;
@@ -167,13 +169,6 @@ const MOCK_PRODUCT_DETAILS: ProductDetail[] = [
     description: 'Brave the cold with this chic and comfortable sweater!',
   },
 ];
-
-// Fake a delay between 1-2 seconds
-const fakeDelay = async () => {
-  const randomDelay = 1000 + Math.random() * 1000;
-
-  return new Promise(r => setTimeout(r, randomDelay));
-};
 
 export const getProducts = async () => {
   await fakeDelay();

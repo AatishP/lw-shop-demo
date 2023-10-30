@@ -1,4 +1,9 @@
-import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
+import {
+  CompositeNavigationProp,
+  RouteProp,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {AppScreen} from 'components/AppScreen';
 import {AppText} from 'components/AppText';
@@ -16,17 +21,25 @@ type OrderConfirmationNavigationProp = CompositeNavigationProp<
   StackNavigationProp<RootNavigatorParams>
 >;
 
+type OrderConfirmationRouteProp = RouteProp<
+  CheckoutNavigatorParams,
+  Routes.OrderConfirmation
+>;
+
 export const OrderConfirmation = () => {
   const {navigate} = useNavigation<OrderConfirmationNavigationProp>();
+  const {params} = useRoute<OrderConfirmationRouteProp>();
 
   const handleHomePress = () => {
     navigate(Routes.TabNavigator, {screen: Routes.Home});
   };
 
+  const orderNumberString = params.orderId ? `#${params.orderId} ` : '';
+
   return (
     <AppScreen>
       <AppText type="title" weight="bold" alignment="center">
-        Your order has been placed
+        Your order {orderNumberString}has been placed
       </AppText>
       <Space size={16} />
       <AppText alignment="center">Thanks for simply shopping!</AppText>
