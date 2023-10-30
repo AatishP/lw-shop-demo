@@ -206,8 +206,14 @@ export const CustomerDetails = () => {
         />
       </View>
       <Space size={32} />
-      {isLoading && <ActivityIndicator size="large" />}
+      {isLoading && (
+        <>
+          <ActivityIndicator size="large" />
+          <Space size={16} />
+        </>
+      )}
       <Button title="Place order" onPress={handleSubmit(onOrderPlaced)} />
+      <Space size={8} />
     </AppScreen>
   );
 };
