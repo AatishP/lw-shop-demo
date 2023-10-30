@@ -1,28 +1,6 @@
-# Minimalist Online Markdown Editor
-
-This is the **simplest** and **slickest** online Markdown editor.  
-Just write Markdown and see what it looks like as you type. And convert it to HTML in one click.
-
-## Getting started
-
-### How?
-
-Just start typing in the left panel.
-
-### Buttons you might want to use
-
-- **Quick Reference**: that's a reminder of the most basic rules of Markdown
-- **HTML | Preview**: _HTML_ to see the markup generated from your Markdown text, _Preview_ to see how it looks like
-
-### Privacy
-
-- No data is sent to any server – everything you type stays inside your browser
-- The editor automatically saves what you write locally for future use.  
-  If using a public computer, either empty the left panel before leaving the editor or use your browser's privacy mode
-
 # Simple Shop - A Demo App
 
-This App was created using React Native over the course of about a day to fulfil the following brief for a basic shopping App:
+This App was created using React Native to fulfil the following brief for a basic shopping App:
 
 Screens:
 
@@ -77,7 +55,20 @@ After all the project requirements have been set up, including Xcode installed a
 
 You can also run the project directly from Xcode or Android Studio if you wish.
 
-## Extra notes
+## Next steps
+
+With the limited scope of this project, and time constraints to create it, there are a few things I would do next if I had more time or if this was turning into a real project.
+
+- Create a proper API. Obviously all of the API interactions are mocked out in this example, and as a result some of the state management is less than ideal to support that. If a real API were available, I would probably update the product/cart state to use some kind of normalised entity model to avoid refetching product details everywhere, and to avoid all the mapping gymnastics around the cart.
+- More responsive design. A lot of design elements are using percentage based widths, which work fine in the short term but don't adapt well to differing screen/font sizes. I'd like to create some more foundational layout components to make the UI more adaptable. The customer details form in particular looks quite awful.
+- Tests. Right now there are no tests at all (unit or otherwise), and I'd like to create a proper test suite.
+- Learn more about RTK Queries. While I was previously familiar with Redux Toolkit, this was my first time using RTK Queries. They seem quite powerful, but I wasn't sure I used them in a 100% correct way, nor did I probably leverage all the functionality they provide. I'm sure I ended up doing some things that weren't quite best practice that made things harder for myself.
+- Animations. Right now a couple of buttons have some basic animations just to react to user interaction, but I would create a more robust base animation set to use across the board for interactable elements, and probably also migrate over to `react-native-reanimated`.
+- Theming. A lot of the components are manually styled - I would avoid doing this once a proper design was in place, and use a theme with tokenised values to keep things consistent.
+- Error handling. None of the screens really account for errors, and the customer details form especially contains no validation.
+- Hire a designer. Obviously the design/UX is very barebones and utilitarian right now, but the entire design needs an overhaul.
+
+## Notes
 
 ### Image Credits:
 
